@@ -1,21 +1,9 @@
-# AutoDO: Robust AutoAugment for Biased Data with Label Noise via Scalable Probabilistic Implicit Differentiation
-CVPR 2021 preprint: [https://arxiv.org/abs/2103.05863](https://arxiv.org/abs/2103.05863)
+# Instance-Level Data Augmentation
 
-## Abstract
-AutoAugment has sparked an interest in automated augmentation methods for deep learning models. These methods estimate image transformation policies for train data that improve generalization to test data. While recent papers evolved in the direction of decreasing policy search complexity, we show that those methods are not robust when applied to biased and noisy data. To overcome these limitations, we reformulate AutoAugment as a generalized automated dataset optimization (AutoDO) task that minimizes the distribution shift between test data and distorted train dataset. In our AutoDO model, we explicitly estimate a set of per-point hyperparameters to flexibly change distribution of train data. In particular, we include hyperparameters for augmentation, loss weights, and soft-labels that are jointly estimated using implicit differentiation. We develop a theoretical probabilistic interpretation of this framework using Fisher information and show that its complexity scales linearly with the dataset size. Our experiments on SVHN, CIFAR-10/100, and ImageNet classification show up to 9.3% improvement for biased datasets with label noise compared to prior methods and, importantly, up to 36.6% gain for underrepresented SVHN classes.
 
-## BibTex Citation
-If you like our [paper](https://arxiv.org/abs/2103.05863) or code, please cite it using the following BibTex:
-```
-@InProceedings{Gudovskiy_2021_CVPR,
-    author    = {Gudovskiy, Denis and Rigazio, Luca and Ishizaka, Shun and Kozuka, Kazuki and Tsukizawa, Sotaro},
-    title     = {AutoDO: Robust AutoAugment for Biased Data With Label Noise via Scalable Probabilistic Implicit Differentiation},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2021},
-    pages     = {16601-16610}
-}
-```
+
+
+
 
 ## Installation
 - Clone this repository: tested on Python 3.6
@@ -34,7 +22,6 @@ Due to large size, ImageNet has to be manually downloaded according to [torchvis
 
 ## Code Organization
 - ./custom_datasets - contains dataloaders (copied from torchvision)
-- ./custom_models - contains CNN architectures and *AutoDO models and hyperparameter optimization function in automodels.py*
 - ./custom_transforms - contains policy models for RandAugment, Fast AutoAugment and DADA methods as well as common image preprocessing functions
 
 ## Running Experiments
